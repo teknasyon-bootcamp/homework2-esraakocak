@@ -1,5 +1,15 @@
 <?php
+require_once 'functions.php';
 
+
+
+function getlatestResult(){
+
+    $r = getRandomPostCount(3,6); // 5
+    $result = getLatestPosts($r);
+    return $result;
+
+}
 /**
  * posts.php
  *

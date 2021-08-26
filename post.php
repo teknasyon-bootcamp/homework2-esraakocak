@@ -1,4 +1,25 @@
 <?php
+require_once 'posts.php';
+require_once 'functions.php';
+$my_array = getlatestResult();
+sout($my_array);
+
+foreach ($my_array as $key => $value) {  
+    if(!isset($key))  $key = 1;
+    if(!isset($value['title'])) $value['title'] = "my title";
+    if(!isset($value['type'])) $value['type'] = "my type pink";
+
+    if ($value['type'] == 'urgent') $color = "red";
+    else if ($value['type'] == 'warning') $color = "yellow";
+    else $color = "white";
+
+    /// $color = (($value['type'] == "urgent"  ? "red" : $value['type'] == "warning" ) ? "yellow" : "white");
+    // ilgili içerik gösterilmeden önce bir div oluşturulmalı ve* bu div $type değerine göre arkaplan rengi almalıdır.
+
+    echo "<div style='background-color:" . $color . ";'> ";
+    getPostDetails($key, $value['title']);
+    echo "</div>";  
+}
 
 /**
  * post.php

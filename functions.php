@@ -15,6 +15,11 @@
  * istiyoruz. Ek olarak, `getRandomPostCount` isminde bir fonksiyon tanımlamanızı
  * bekliyoruz. Bununla ilgili detaylı bilgi diğer betiklerde yer alıyor.
  */
+// $_server  başlıklar, yollar ve komut dosyası konumları hakkında bilgi tutan bir PHP süper global değişkenidir.
+// REQUEST_URI ise geçerli sayfanın yani functions.php nin uri'sini dönderir.
+$uri = $_SERVER['REQUEST_URI']; 
+
+if ($uri  !== '/functions.php') {  
 
 function getLatestPosts($count = 5)
 {
@@ -46,6 +51,25 @@ function getPostDetails($id, $title)
 </p>
 EOT;
 }
+/* sayfadaki çıktıların daha iyi bir görüntü olması için oluşturuldu.
+   sürekli tekrar edilmemesi için .
+*/
+function sout($v)
+{
+    echo "<pre>";
+    var_dump($v);
+    echo "</pre>";
+
+}
 
 // Aşağıya fonksiyonu tanımlayabilirsiniz.
+//BU fonksiyonda min ve max olmak üzere iki tane parametremiz var ve random sayı üretiyor.
+function getRandomPostCount ($min , $max) { 
+  
+    return rand($min,$max);
+}
+}else {
+    exit("Doğrudan erişime izin verilmiyor.") ;
+}
 
+ 
