@@ -21,7 +21,7 @@ $uri = $_SERVER['REQUEST_URI'];
 
 if ($uri  !== '/functions.php') {  
 
-function getLatestPosts($count = 5)
+function getLatestPosts($count = 5) // değer girmediysek 5 değerini baz alır.yoksa girilen değer ile işlem yapar.
 {
     $posts = [];
     $postTypes = ["urgent", "warning", "normal"];

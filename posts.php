@@ -5,8 +5,8 @@ require_once 'functions.php';
 
 function getlatestResult(){
 
-    $r = getRandomPostCount(3,6); // 5
-    $result = getLatestPosts($r);
+    $rnd = getRandomPostCount(3,6);  // 3 ile 6 arasında rastgele tamsayılar elde edilir.
+    $result = getLatestPosts($rnd); // elde ettiğimiz değerleri getLatestPosts fonksiyonuna gönderiyoruz.
     return $result;
 
 }
