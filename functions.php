@@ -19,6 +19,7 @@
 // REQUEST_URI ise geçerli sayfanın yani functions.php nin uri'sini dönderir.
 $uri = $_SERVER['REQUEST_URI']; 
 
+ // direk olarak functons.php çalıştırınca ekrana doğrudan erişim izni yok yazdırıcak. 
 if ($uri  !== '/functions.php') {  
 
 function getLatestPosts($count = 5) // değer girmediysek 5 değerini baz alır.yoksa girilen değer ile işlem yapar.
